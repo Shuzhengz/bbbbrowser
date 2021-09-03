@@ -14,7 +14,10 @@ You're welcome
 
 ## Requirement
 You will need Java JRE 11 to run this program
-Use this program at your own risk, please do not submit an issue saying the browser doesn't work, because it's not supposed to
+
+Useage of binaries or source shall be entirely and without exception at your own risk, including when your computer explodes, if it does
+
+Please do not submit an issue saying the browser doesn't work, because it's not supposed to
 
 ## Licence
 Everyone that uses this browser needs press f to pay respect

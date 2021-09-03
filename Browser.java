@@ -1,7 +1,6 @@
 package java_intro.example;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.IDN;
 import javax.swing.JEditorPane;
@@ -18,6 +17,9 @@ public class Browser extends JFrame implements HyperlinkListener {
 
     private final JLabel lblStatus = new JLabel(" ");
 
+    /**
+     * The browser
+     */
     public Browser() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JPanel browserPanel = new JPanel();
@@ -30,16 +32,14 @@ public class Browser extends JFrame implements HyperlinkListener {
         getContentPane().add(editorPane, BorderLayout.CENTER);
         getContentPane().add(lblStatus, BorderLayout.SOUTH);
 
-        ActionListener al = new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-                try {
-                    String url = ae.getActionCommand().toLowerCase();
-                    if (url.startsWith("http://")) url = url.substring(7);
-                    editorPane.setPage("http://" + IDN.toASCII(url));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    JOptionPane.showMessageDialog(Browser.this, "Browser problem: " + e.getMessage());
-                }
+        ActionListener al = ae -> {
+            try {
+                String url = ae.getActionCommand().toLowerCase();
+                if (url.startsWith("http://")) url = url.substring(7);
+                editorPane.setPage("http://" + IDN.toASCII(url));
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(Browser.this, "Browser problem: " + e.getMessage());
             }
         };
 
@@ -48,6 +48,10 @@ public class Browser extends JFrame implements HyperlinkListener {
         setVisible(true);
     }
 
+    /**
+     * Updates the hyperlink for the URL you just typed in
+     * @param hle the hyperlink event that needs updating
+     */
     @Override
     public void hyperlinkUpdate(HyperlinkEvent hle) {
         HyperlinkEvent.EventType evtype = hle.getEventType();
@@ -57,6 +61,10 @@ public class Browser extends JFrame implements HyperlinkListener {
             lblStatus.setText(" ");
     }
 
+    /**
+     * Main class
+     * @param args run it
+     */
     public static void main(String[] args) {
         new Browser();
     }

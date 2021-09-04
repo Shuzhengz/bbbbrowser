@@ -1,4 +1,4 @@
-package java_intro.example;
+package bbbbrowser;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;

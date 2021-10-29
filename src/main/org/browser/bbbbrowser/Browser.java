@@ -1,3 +1,5 @@
+package org.browser.bbbbrowser;
+
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.net.IDN;
@@ -11,6 +13,7 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
 public class Browser extends JFrame implements HyperlinkListener {
+    
     JEditorPane editorPane = new JEditorPane();
 
     private final JLabel lblStatus = new JLabel(" ");

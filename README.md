@@ -13,7 +13,7 @@ All you need to do is to run this java program aaaaaand boom, you have a browser
 You're welcome
 
 ## Requirement
-You will need Java JRE 11 to run this program
+You will need Java JRE 17 to run this program
 
 Useage of binaries or source shall be entirely and without exception at your own risk, including when your computer explodes, if it does
 
